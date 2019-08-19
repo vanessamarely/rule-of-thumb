@@ -1,0 +1,113 @@
+.card {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 4%;
+  min-height: 60vh;
+  position: relative;
+  width: 48%;
+  &__character {
+    display: flex;
+    flex-direction: column;
+    height: 88%;
+    &__title {
+      color: white;
+      font-size: 40px;
+      line-height: 40px;
+      font-weight: 300;
+      margin: 0;
+      padding: 0 20px;
+      margin-top: 40%;
+    }
+    &__text {
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 300;
+      margin: 0;
+      padding: 20px;
+    }
+    &__details {
+      display: flex;
+      flex-direction: row;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 400;
+      margin: 0;
+      padding: 20px;
+      align-items: center;
+      button {
+        background: transparent;
+        border: 1px solid white;
+        order: 1;
+        align-self: flex-start;
+        min-width: 155px;
+        height: 40px;
+      }
+      p {
+        order: 1;
+        align-self: flex-end;
+        width: 50%;
+        text-align: right;
+        margin: 0;
+      }
+    }
+  }
+  &__vote {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    &__progressBar {
+      z-index: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      min-width: 100px;
+      height: 40px;
+
+      &__likes {
+        background-color: #32c2bb;
+        align-self: flex-start;
+        order: 1;
+        padding: 0px;
+        margin: 0px;
+        width: 0px;
+        height: 40px;
+      }
+
+      &__dislikes {
+        background-color: #feb432;
+        align-self: flex-end;
+        order: 2;
+        padding: 0px;
+        margin: 0px;
+        width: 0px;
+        height: 40px;
+      }
+    }
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      position: absolute;
+      justify-content: space-between;
+      width: 100%;
+      &__button {
+        background-color: transparent;
+        z-index: 2;
+        border: 0;
+        color: white;
+        font-size: 25px;
+        height: 100%;
+        min-width: 40px;
+        &.like {
+          align-items: flex-start;
+        }
+        &.dislike {
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+}
+

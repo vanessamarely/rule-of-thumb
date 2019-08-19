@@ -1,0 +1,52 @@
+<section class="header">
+  <div class="box">&nbsp;</div>
+  <section class="top">
+    <section class="header__logo">
+      <h1>
+        <a routerLink="/home">
+          Rule of Thumb.
+        </a>
+      </h1>
+    </section>
+    <section class="header__navigation">
+      <app-menu class="header__navigation__menu"></app-menu>
+      <section class="header__navigation__search">
+        <fa-icon [icon]="faSearch"></fa-icon>
+      </section>
+    </section>
+  </section>
+  <section class="middle">
+    <div class="bannerCard">
+      <div class="bannerCard__header">
+        <p>What’s your opinion </p>
+        <h2>Pope Francis?</h2>
+      </div>
+      <div class="bannerCard__body">
+        <p>He’s talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up) </p>
+        <p class="tiny">More information</p>
+        <p><strong>What’s Your Verdict?</strong></p>
+      </div>
+      <div class="bannerCard__vote">
+        <button class="bannerCard__vote__button like">
+          <fa-icon [icon]="faThumbsUp"></fa-icon>
+        </button>
+        <button class="bannerCard__vote__button dislike">
+          <fa-icon [icon]="faThumbsDown"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="bottom">
+    <div class="box box__bottom">&nbsp;</div>
+    <div class="clossing">
+      <div class="clossing__left">
+        <p>CLOSSING IN</p>
+        <div class="arrow-right"></div>
+      </div>
+      <div class="clossing__right">
+        <p><strong>22</strong> days</p>
+      </div>
+    </div>
+  </section>
+</section>
+

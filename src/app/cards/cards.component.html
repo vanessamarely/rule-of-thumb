@@ -1,0 +1,37 @@
+<section class="card" *ngFor="let character of characters" [ngStyle]="{'background-image':'url(' + character.picture + ')'}">
+  <div class="card__character">
+    <h2 class="card__character__title"> 
+      <span *ngIf="likes > dislikes"><fa-icon [icon]="faThumbsUp"></fa-icon></span> 
+      <span *ngIf="dislikes > likes"><fa-icon [icon]="faThumbsDown"></fa-icon></span> 
+      <span>{{character.name}}</span>
+    </h2>
+    <p class="card__character__text">{{character.description}}</p>
+    <div class="card__character__details">
+      <button type="button">View Full Report</button>
+      <p>1 month ago
+          in {{character.category}}</p>
+    </div>
+  </div>
+  <div class="card__vote">
+    <div class="card__vote__progressBar">
+      <div class="card__vote__progressBar__likes"
+      [style.width]="likes+'%'"
+      >
+      </div>
+      <div class="card__vote__progressBar__dislikes"
+      [style.width]="dislikes+'%'"
+      >
+      </div>
+    </div>
+    <div class="card__vote__buttons">
+      <button class="card__vote__buttons__button like" (click)="voting('up')">
+        <fa-icon [icon]="faThumbsUp"></fa-icon>
+        <span> {{likes}}% </span>
+      </button>
+      <button class="card__vote__buttons__button dislike" (click)="voting('down')">
+        <span> {{dislikes}}% </span> 
+        <fa-icon [icon]="faThumbsDown"></fa-icon>
+      </button>
+    </div>
+  </div>
+</section>

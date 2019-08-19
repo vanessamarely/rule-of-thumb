@@ -1,0 +1,16 @@
+.menu {
+  &__navigation {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    li {
+      a {
+        font-weight: 300;
+        font-size: 16px;
+        color: white;
+      }
+    }
+  }
+}

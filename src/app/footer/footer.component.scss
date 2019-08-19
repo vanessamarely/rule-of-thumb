@@ -1,0 +1,45 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5% 0;
+  margin: 0 5%;
+  &__options {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 70%;
+    li {
+      margin-right: 20px;
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+  &__socialNeworks {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 30%;
+    &--text {
+      margin: 0;
+      font-weight: 300;
+      font-size: 14px;
+    }
+    &--link {
+      padding: 0 10px;
+      img {
+        width: 25px;
+        height: 25px;
+        &.filter {
+          filter: grayscale(100%); 
+        }
+      }
+    }
+    
+  }
+}
