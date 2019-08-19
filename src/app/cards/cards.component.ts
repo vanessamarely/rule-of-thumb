@@ -15,13 +15,15 @@ export class CardsComponent implements OnInit {
   data: any;
   voteText: string = "Vote now!!"; 
   constructor(private toastr: ToastrService) {
-    this.getInitialData();
+    
    }
 
   ngOnInit() {
+    this.getInitialData();
   }
 
   showMessage(item) {
+    console.log(item)
     if(item.likes !== 0 || item.dislikes !== 0){
       this.toastr.success('Thank you for voting!', 'Vote successfully!');
     }
@@ -61,7 +63,7 @@ export class CardsComponent implements OnInit {
       }
     });
     localStorage.setItem('data', JSON.stringify(alldata)); 
-    this.showMessage();
+    this.showMessage(item);
     
   }
 

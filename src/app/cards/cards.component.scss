@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 4%;
-  min-height: 60vh;
+  min-height: 65vh;
   position: relative;
   width: 48%;
   &__backdrop {
@@ -25,7 +25,7 @@
       font-weight: 300;
       margin: 0;
       padding: 0 20px;
-      margin-top: 40%;
+      margin-top: 43%;
       position: relative;
       z-index: 1;
       &__icons {
@@ -51,6 +51,7 @@
       font-weight: 300;
       margin: 0;
       padding: 20px;
+      color: white;
     }
     &__details {
       z-index: 1;
@@ -60,22 +61,28 @@
       line-height: 14px;
       font-weight: 400;
       margin: 0;
-      padding: 20px;
+      padding: 0 20px;
       align-items: center;
+      .left {
+        align-self: flex-start;
+        width: 60%;
+      }
       button {
         background: transparent;
         border: 1px solid white;
         order: 1;
-        align-self: flex-start;
         min-width: 155px;
         height: 40px;
+        color: white;
       }
       p {
         order: 1;
         align-self: flex-end;
-        width: 50%;
+        width: 40%;
         text-align: right;
         margin: 0;
+        height: 100%;
+        color: white;
       }
     }
     .voteButton {
@@ -87,6 +94,7 @@
         border: 1px solid white;
         background-color: transparent;
         margin: 0 auto;
+        color: white;
       }
     }
   }

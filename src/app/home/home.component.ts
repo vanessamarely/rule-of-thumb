@@ -13,7 +13,10 @@ export class HomeComponent implements OnInit {
   data: any = [];
 
   constructor() {
-    localStorage.setItem('data', JSON.stringify(this.characters));
+    if(JSON.parse(localStorage.getItem('data')).length === 0){
+      localStorage.setItem('data', JSON.stringify(this.characters));
+    }
+    
   }
 
   
