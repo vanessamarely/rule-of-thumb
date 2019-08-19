@@ -14,3 +14,12 @@
     }
   }
 }
+
+@media only screen 
+and (max-device-width : 990px)  {
+  .menu {
+    &__navigation {
+      padding: 0;
+    }
+  } 
+}

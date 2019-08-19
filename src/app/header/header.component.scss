@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   width:100%;
 
@@ -184,9 +184,11 @@ and (max-device-width : 990px)  {
       flex-direction: column;
     }
     &__logo {
-      font-size: 30px;
-      line-height: 30px;
       width: 100%;
+      h1 {
+        font-size: 30px;
+      line-height: 30px;
+      }
     }
     &__navigation {
       width: 100%;
