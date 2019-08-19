@@ -5,7 +5,8 @@
     "likes" : 0,
     "dislikes" : 0,
     "category": "Entertainment",
-    "picture": "../../assets/img/character1.png"
+    "picture": "../../assets/img/character1.png",
+    "id": "elem1"
   },
   { 
     "name": "Mark Zuckerberg",
@@ -13,7 +14,8 @@
     "likes" : 0,
     "dislikes" : 0,
     "category": "Business",
-    "picture": "../../assets/img/character2.png"
+    "picture": "../../assets/img/character2.png",
+    "id": "elem2"
   },
   { 
     "name": "Cristina Fernández de Kirchner",
@@ -21,7 +23,8 @@
     "likes" : 0,
     "dislikes" : 0,
     "category": "Politics",
-    "picture": "../../assets/img/character3.png"
+    "picture": "../../assets/img/character3.png",
+    "id": "elem3"
   },
   { 
     "name": "Malala Yousafzai",
@@ -29,6 +32,7 @@
     "likes" : 0,
     "dislikes" : 0,
     "category": "Entertainment",
-    "picture": "../../assets/img/character4.png"
+    "picture": "../../assets/img/character4.png",
+    "id": "elem4"
   }
 ]

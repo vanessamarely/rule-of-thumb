@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import sampleData from './data.json';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,14 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class HomeComponent implements OnInit {
   faTimes = faTimes;
-  
-  constructor() { }
+  characters: any = sampleData;
+  data: any = [];
 
+  constructor() {
+    localStorage.setItem('data', JSON.stringify(this.characters));
+  }
+
+  
   ngOnInit() {
   }
 

@@ -6,10 +6,18 @@
   min-height: 60vh;
   position: relative;
   width: 48%;
+  &__backdrop {
+    background-image: linear-gradient(to bottom, rgba(146, 146, 146, 0.14), rgba(171, 171, 171, 0.65));
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
   &__character {
     display: flex;
     flex-direction: column;
-    height: 88%;
+    height: 90%;
+    position: relative;
     &__title {
       color: white;
       font-size: 40px;
@@ -18,8 +26,26 @@
       margin: 0;
       padding: 0 20px;
       margin-top: 40%;
+      position: relative;
+      z-index: 1;
+      &__icons {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        span {
+          padding: 2px;
+          font-size: 15px;
+          &.likeIcon {
+            background-color: #32c2bb;
+          }
+          &.dislikeIcon {
+            background-color: #feb432;
+          }
+        }
+      }
     }
     &__text {
+      z-index: 1;
       font-size: 16px;
       line-height: 16px;
       font-weight: 300;
@@ -27,6 +53,7 @@
       padding: 20px;
     }
     &__details {
+      z-index: 1;
       display: flex;
       flex-direction: row;
       font-size: 14px;
@@ -51,11 +78,28 @@
         margin: 0;
       }
     }
+    .voteButton {
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 10px;
+      align-self: center;
+      button {
+        border: 1px solid white;
+        background-color: transparent;
+        margin: 0 auto;
+      }
+    }
   }
   &__vote {
+    z-index: 1;
     display: flex;
     flex-direction: row;
     position: relative;
+    height: 10%;
+
+    &.voted {
+      border: 1px solid white;
+    }
     &__progressBar {
       z-index: 1;
       display: flex;
@@ -108,6 +152,12 @@
         }
       }
     }
+  }
+}
+@media only screen 
+and (max-device-width : 990px)  { 
+  .card {
+    width: 100%;
   }
 }
 

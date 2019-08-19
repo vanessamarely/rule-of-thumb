@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import sampleData from './data.json';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cards',
@@ -12,28 +12,57 @@ export class CardsComponent implements OnInit {
   faThumbsDown = faThumbsDown;
   likes: number = 0;
   dislikes: number = 0;
-  characters: any = sampleData;
-
-  constructor() {console.log(this.characters) }
+  data: any;
+  voteText: string = "Vote now!!"; 
+  constructor(private toastr: ToastrService) {
+    this.getInitialData();
+   }
 
   ngOnInit() {
   }
 
-  voting(type: string){
-    const total = this.likes + this.dislikes;
+  showMessage(item) {
+    if(item.likes !== 0 || item.dislikes !== 0){
+      this.toastr.success('Thank you for voting!', 'Vote successfully!');
+    }
+    else{
+      this.toastr.info('Click on Thumb Up/Down to vote', 'Please Vote!');
+    }
+  }
+
+  getInitialData(){
+    this.data = JSON.parse(localStorage.getItem('data'));
+  }
+
+  voting(type: string, item){
+    const alldata = [...this.data];
+    let likes = item.likes;
+    let dislikes = item.dislikes;
+    this.voteText = "Vote again!";
     if(type === 'up'){
-      this.likes++;
-      if(this.dislikes !== 0){
-        this.dislikes--;
+      likes++;
+      if(dislikes !== 0){
+        dislikes--;
       }
     }else{
-      this.dislikes++;
-      if(this.likes !== 0){
-        this.likes--;
+      dislikes++;
+      if(likes !== 0){
+        likes--;
       }
     }
-    const likePerc = (this.likes/total)*100;
-    const dislikePerc = (this.dislikes/ total)*100;
+    
+    const total = likes + dislikes;
+    const likePerc = (likes/total)*100;
+    const dislikePerc = (dislikes/ total)*100;
+    alldata.map( (element) => {
+      if(element.id === item.id){
+        element['likes'] = likes;
+        element['dislikes'] = dislikes;
+      }
+    });
+    localStorage.setItem('data', JSON.stringify(alldata)); 
+    this.showMessage();
+    
   }
 
 }
